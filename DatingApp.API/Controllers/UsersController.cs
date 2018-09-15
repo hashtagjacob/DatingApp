@@ -49,6 +49,7 @@ namespace DatingApp.API.Controllers
             }
 
             var userFromRepo = await repo.GetUser(id);
+            
             mapper.Map(userForUpdateDto, userFromRepo);
 
             if(await repo.SaveAll()) {
