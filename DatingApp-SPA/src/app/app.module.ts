@@ -17,7 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { BsDropdownModule, BsDatepickerModule, TabsModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
-import { MessegesComponent } from './messeges/messeges.component';
+import { MessagesComponent } from './messages/messages.component';
 import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
@@ -31,6 +31,8 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import { ListsResolver } from './_resolver/lists.resolver';
+import { MessagesResolver } from './_resolver/messages.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -45,11 +47,12 @@ export function tokenGetter() {
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
-      MessegesComponent,
+      MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -81,6 +84,7 @@ export function tokenGetter() {
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
+      MessagesResolver,
       ListsResolver,
       PreventUnsavedChanges
    ],
